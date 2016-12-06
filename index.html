@@ -1,117 +1,111 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-        <title>個人檔案-張耀澤</title>
-               
-        <link rel="stylesheet" type="text/css" href="app.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style type="text/css">
-       h2 {
+<title>W3.CSS Template</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="app.css">
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Playfair Display";
+    letter-spacing: 5px;
+}
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <ul class="w3-navbar w3-white w3-wide w3-padding-8 w3-card-2">
+    <li>
+      <a href="#home" class="w3-margin-left">Destroyer</a>
+    </li>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <li class="w3-right w3-hide-small">
+      <a href="#about" class="w3-left">About</a>
+      <a href="#menu" class="w3-left">Our Product</a>
+      <a href="https://tonylee19544.github.io/destroyerweb/destroy.html" class="w3-left w3-margin-right">Photo Destroyer</a>
+    </li>
+  </ul>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+  <img class="w3-image" src="Destroyer.jpg" width="1600" height="800">
+  <div class="w3-display-bottomleft w3-padding-xlarge w3-opacity">
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+  <div class="w3-row w3-padding-64" id="about">
+  <h1 class="w3-center">About Us</h1><br>
+		<div class="w3-col m6 w3-padding-large">
+			<img src="2.png" class="w3-round w3-image w3-opacity-min" width="600"><br>
+      <h5 class="w3-center">黃祥斌</h5>
+      <p class="w3-large">系級:電機106</p>
+		<p class="w3-large">興趣:看電影漫畫、聽EDM</p>
+		<p class="w3-large">專長:最近焊接越來越厲害了</p>
+	    <p class="w3-large">屁話一句:人生有很多出乎意料的事，例如體重的上升ˊˋ</p> </div>
+	 
+    
+    <div class="w3-col m6 w3-padding-large"> 
+	   <img src="1.png" class="w3-round w3-image w3-opacity-min" width="600"><br>
+      <h5 class="w3-center">李昱廷</h5>
+      <p class="w3-large">系級:電機106</p>
+		<p class="w3-large">興趣:攝影</p>
+		<p class="w3-large">專長:攝影</p>
+	    <p class="w3-large">屁話一句:原來大五離我那麼近</p> </div>
+	  
+    
+    <div class="w3-col m6 w3-padding-large">
+	    <img src="3.png" class="w3-round w3-image w3-opacity-min" width="600">
+      <h5 class="w3-center">阿澤</h5>
+      <p class="w3-large">系級:電機106</p>
+		<p class="w3-large">興趣:兜風</p>
+		<p class="w3-large">專長:彈吉他</p>
+	    <p class="w3-large">屁話一句:Live for nothing or die for something.</p> </div>
+	 
+            
+    <div class="w3-col m6 w3-padding-large"> 
+	     <img src="4.png" class="w3-round w3-image w3-opacity-min" width="600">
+      <h5 class="w3-center">617</h5>
+      <p class="w3-large">系級:電機107</p>
+		<p class="w3-large">興趣:玩桌遊</p>
+		<p class="w3-large">專長:下棋</p>
+	    <p class="w3-large">屁話一句:要是會寫網頁的話就好了</p> </div>
+  </div>
   
-          text-shadow: 2px 2px #FF0000;
-       }
-       body{
-        margin:0;
-        padding:0;
-        background: #000 url("https://cloud.githubusercontent.com/assets/17470291/19436157/21cc8d3e-94a1-11e6-9e1c-db4a6b63a6ac.jpg") center center fixed no-repeat;
-        -moz-background-size: cover;
-        background-size: cover;
-        }  
-          </style>
-          
-        <script type="text/javascript">
-        function Showinfo()
-        {   alert("hello!! 我是成大電機106乙班的張耀澤");
-                                }
-                   
-function toSpans(span) {
-  var str=span.firstChild.data;
-  var a=str.length;
-  span.removeChild(span.firstChild);
-  for(var i=0; i<a; i++) {
-    var theSpan=document.createElement("SPAN");
-    theSpan.appendChild(document.createTextNode(str.charAt(i)));
-    span.appendChild(theSpan);
-  }
-}
-         
-function RainbowSpan(span, hue, deg, brt, spd, hspd) {
-    this.deg=(deg==null?360:Math.abs(deg));
-    this.hue=(hue==null?0:Math.abs(hue)%360);
-    this.hspd=(hspd==null?3:Math.abs(hspd)%360);
-    this.length=span.firstChild.data.length;
-    this.span=span;
-    this.speed=(spd==null?50:Math.abs(spd));
-    this.hInc=this.deg/this.length;
-    this.brt=(brt==null?255:Math.abs(brt)%256);
-    this.timer=null;
-    toSpans(span);
-    this.moveRainbow();
-}
-
-
-
-RainbowSpan.prototype.moveRainbow = function() {
-  if(this.hue>359) this.hue-=360;
-  var color;
-  var b=this.brt;
-  var a=this.length;
-  var h=this.hue;
-
-for(var i=0; i<a; i++) {
-    if(h>359) h-=360;
-    if(h<60) { color=Math.floor(((h)/60)*b); red=b;grn=color;blu=0; }
-    else if(h<120) { color=Math.floor(((h-60)/60)*b); red=b-color;grn=b;blu=0; }
-    else if(h<180) { color=Math.floor(((h-120)/60)*b); red=0;grn=b;blu=color; }
-    else if(h<240) { color=Math.floor(((h-180)/60)*b); red=0;grn=b-color;blu=b; }
-    else if(h<300) { color=Math.floor(((h-240)/60)*b); red=color;grn=0;blu=b; }
-    else { color=Math.floor(((h-300)/60)*b); red=b;grn=0;blu=b-color; }
-    h+=this.hInc;
-    this.span.childNodes[i].style.color="rgb("+red+", "+grn+", "+blu+")";
-  }
-  this.hue+=this.hspd;
-}
-                  
-        </script>
-
-
-
-</head>   
-
-<body id="pf">
-
-          <div class="page">
-                                                                               
-           <br><br>
-           
-           <img src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-9/10625033_815931005096866_5925716161065807604_n.jpg?oh=851b6e076ff29be7a4f83e1ede7f2d2c&oe=58668CFD" style="float:left;margin:50px;width:200px;height:200px"><p><p>
-           </br></br>
-           <p><p>
-          <br><br><br><br><br><br><br><br><br><br><br><br><br>
-          <button onclick="Showinfo()"><h2 class="info">我的資訊.</h2></button><br>
-          <h2 id="r1">hello!! 我是成大電機106乙班的張耀澤 </h2>
-					<script type="text/javascript">
-					var r1=document.getElementById("r1"); //get span to apply rainbow
-					var myRainbowSpan=new RainbowSpan(r1, 0, 360, 255, 50, 18); //apply static rainbow effect
-					myRainbowSpan.timer=window.setInterval("myRainbowSpan.moveRainbow()", myRainbowSpan.speed);
-					</script>
-
-          <button class="bt"><div id="r2">聯絡我的方式</div></button><br>
-					<script type="text/javascript">
-					var r2=document.getElementById("r2"); //get span to apply rainbow
-				  var myRainbowSpan2=new RainbowSpan(r2, 0, 360, 255, 50, 348); //apply static rainbow effect
-					myRainbowSpan2.timer=window.setInterval("myRainbowSpan2.moveRainbow()", myRainbowSpan2.speed);
-					</script>
- 
-          </p></p>
+  <hr>
   
-          <span class="ref"><a href="https://www.facebook.com/profile.php?id=100000399210421" class="link">點我連結到我的FB. </a></span><br>
-      
+  <!-- Menu Section -->
+  <div class="w3-row w3-padding-64" id="menu">
+    <div class="w3-col l6 w3-padding-large">
+      <h1 class="w3-center">Our Product</h1><br>
+      <a href="https://tonylee19544.github.io/destroyerweb/destroy.html"><h4>Photo Destroyer</h4></a>
+      <p class="w3-text-grey">Chose a picture of your enemy.</p>
+      <p class="w3-text-grey">Upload it from this website.</p>
+      <a href="http://imgur.com/upload"><h4>Upload Your Stupid Enemy</h4></a>
+      <p class="w3-text-grey">Copy The URL</p>
+      <a href="https://tonylee19544.github.io/destroyerweb/destroy.html"><h4>Paste To This Website.</h4></a>
+      <p class="w3-text-grey">Start to destroy it.</p>
+    </div>
+	<div class="w3-col l6 w3-padding-large">
+      <img src="product.jpg" class="w3-round w3-image w3-opacity-min" alt="Menu" width="1600" height="800">
+    </div>
+  </div>
 
-          <a href="https://github.com/a626177"  class="link">
-           我的 Github</a>
-                                                                                                                                                  
- </body>
- </head>
- </html>
+  <hr>
+  
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p>Powered by <a href="https://tonylee19544.github.io/destroyerweb/" title="Destroyer" target="_blank" class="w3-hover-text-green">Destroyer</a></p>
+</footer>
+
+</body>
+</html>
+
+
