@@ -52,12 +52,13 @@ img:hover{
 <img id="HILLARY" onclick="chose(this)" src="http://github.com/tonylee19544/destroyerweb/raw/gh-pages/hillary.png" >
 <img id="TRUMP" onclick="chose(this)" src="http://github.com/tonylee19544/destroyerweb/raw/gh-pages/trump.png">
     </div>
-<div><canvas onclick="getcoords(event),TestSound()"  id="myCanvas" width = "0" height = "0" style=" border:1px solid #d3d3d3;">
+<div><canvas onclick="getcoords(event)"  id="myCanvas" width = "0" height = "0" style=" border:1px solid #d3d3d3;">
 Your browser does not support the HTML5 canvas tag.
     </canvas></div></div>
 <div><p id="demo"></p></div>
-<bgsound id="Sound">
-<script>
+document.getElementById("soundControl").autostart=true;
+<embed id="soundControl" src="stm.mp3" hidden="true" loop="false" autostart="false"></embed>
+<script language="javascript" type="text/javascript">
 var a;
 var b;
 var c = document.getElementById("myCanvas");
@@ -94,16 +95,16 @@ img = document.getElementById(id);
 h=img.clientHeight;
 w=img.clientWidth;
 }
+    
+
 function getcoords(event){
 x=(event.clientX-X+$(document).scrollLeft())-w/2;
 y=(event.clientY-Y+$(document).scrollTop())-h/2;
 ctx.drawImage(img,x,y,w,h);
-
+document.embeds[0].play()
 }
 
-function TestSound(){
-document.all.Sound.src = "stm.mp3";
- }
+
     
 
 </script>
