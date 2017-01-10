@@ -57,7 +57,7 @@ Your browser does not support the HTML5 canvas tag.
     </canvas></div></div>
 <div><p id="demo"></p></div>
 
-<embed id="soundControl" src="stm.mp3" hidden="true" loop="false" autostart="false"></embed>
+
 <script language="javascript" type="text/javascript">
 var a;
 var b;
@@ -100,9 +100,7 @@ function getcoords(event){
 x=(event.clientX-X+$(document).scrollLeft())-w/2;
 y=(event.clientY-Y+$(document).scrollTop())-h/2;
 ctx.drawImage(img,x,y,w,h);
-    
-document.getElementById('soundControl').autostart=true;
-document.embeds[0].play()
+  
 }
     
 </script>
