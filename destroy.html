@@ -13,6 +13,12 @@
     canvas{background:white;
         cursor:url(http://github.com/tonylee19544/destroyerweb/raw/gh-pages/rectangle-stamp-heavy_grande.gif) 64 120,auto;}
     canvas:active{cursor:url(http://github.com/tonylee19544/destroyerweb/raw/gh-pages/rectangle-stamp-heavy_grande.gif) 64 90,auto;}
+audio {
+            position: absolute;
+            top: 195px;
+            left: 60px;
+        }
+    
 img{
 width:auto;
 height:100px;}
@@ -55,10 +61,15 @@ img:hover{
 <div><canvas onclick="getcoords(event)"  id="myCanvas" width = "0" height = "0" style=" border:1px solid #d3d3d3;">
 Your browser does not support the HTML5 canvas tag.
     </canvas></div></div>
-<div><p id="demo"></p></div>
 
-<embed id="soundControl" src="stm.mp3" hidden="true" loop="false" autostart="false"></embed>
+
+<!--<embed id="soundControl" src="stm.mp3" hidden="true" loop="false" autostart="false"></embed> -->
 <script language="javascript" type="text/javascript">
+
+    var can, ctx, audio,
+var timer, angle = 0;    
+    
+    
 var a;
 var b;
 var c = document.getElementById("myCanvas");
@@ -106,10 +117,29 @@ document.getElementById('soundControl').autostart=true;
 document.embeds[0].play()
 }
 
-
     
-
+function init() {
+            audio = document.getElementById("audio");
+            can = document.getElementById("myCanvas");
+            ctx = can.getContext("2d");
+            audio.addEventListener("playing", drawGradient, false);
+            audio.addEventListener("pause", stop, false);
+            audio.addEventListener("ended", stop, false);
+        }
+ 
+        function stop() {
+            clearTimeout(timer);
+        }
+ 
+            if (!document.querySelector("audio").paused)
+                timer = setTimeout(drawGradient, 100);
+    
 </script>
-
+    
+<body onload="init()">
+<audio id="audio" src="stm.mp3" controls>
+</audio>
+</body>
+    
 </body>
 </html>
