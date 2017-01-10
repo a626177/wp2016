@@ -13,12 +13,6 @@
     canvas{background:white;
         cursor:url(http://github.com/tonylee19544/destroyerweb/raw/gh-pages/rectangle-stamp-heavy_grande.gif) 64 120,auto;}
     canvas:active{cursor:url(http://github.com/tonylee19544/destroyerweb/raw/gh-pages/rectangle-stamp-heavy_grande.gif) 64 90,auto;}
-audio {
-            position: absolute;
-            top: 195px;
-            left: 60px;
-        }
-    
 img{
 width:auto;
 height:100px;}
@@ -61,15 +55,10 @@ img:hover{
 <div><canvas onclick="getcoords(event)"  id="myCanvas" width = "0" height = "0" style=" border:1px solid #d3d3d3;">
 Your browser does not support the HTML5 canvas tag.
     </canvas></div></div>
+<div><p id="demo"></p></div>
 
-
-<!--<embed id="soundControl" src="stm.mp3" hidden="true" loop="false" autostart="false"></embed> -->
+<embed id="soundControl" src="stm.mp3" hidden="true" loop="false" autostart="false"></embed>
 <script language="javascript" type="text/javascript">
-
-    var can, ctx, audio,
-var timer, angle = 0;    
-    
-    
 var a;
 var b;
 var c = document.getElementById("myCanvas");
@@ -107,7 +96,6 @@ h=img.clientHeight;
 w=img.clientWidth;
 }
     
-
 function getcoords(event){
 x=(event.clientX-X+$(document).scrollLeft())-w/2;
 y=(event.clientY-Y+$(document).scrollTop())-h/2;
@@ -116,11 +104,8 @@ ctx.drawImage(img,x,y,w,h);
 document.getElementById('soundControl').autostart=true;
 document.embeds[0].play()
 }
-
-  
-
-
     
-    </script>   
+</script>
+
 </body>
 </html>
